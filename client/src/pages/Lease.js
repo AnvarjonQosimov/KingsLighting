@@ -251,19 +251,6 @@ function Lease() {
                   </label>
                 </div>
 
-                <div className="container phone-custom">
-                  <PhoneInput
-                    country={"uz"}
-                    value={phoneNumberInPanel}
-                    onChange={(phone) => setPhoneNumberInPanel(phone)}
-                    inputProps={{
-                      name: "phone",
-                      required: true,
-                      autofocus: true,
-                    }}
-                  />
-                </div>
-
                 <button type="submit">{t("savebtn")}</button>
               </form>
             </div>

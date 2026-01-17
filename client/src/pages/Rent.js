@@ -18,7 +18,7 @@ function Rent(props) {
   const [isClickedHeart, setIsClickedHeart] = useState(true);
   const [confirmDeleteId, setConfirmDeleteId] = useState(null);
 
-  const adminEmailMain = "aziz.co@mail.ru";
+  const adminEmailMain = "anvarqosimov153@gmail.com";
   const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
@@ -237,14 +237,14 @@ function Rent(props) {
                 <div className="rentcardline"></div>
 
                 <h3 className="price">
-                  {t("price")}: +998 (99) 891-34-51 $<div className="priceline"></div>
+                  {t("price")}: {card.price} $<div className="priceline"></div>
                   <span>{t("oyiga")}</span>
                 </h3>
 
                 <div className="rentcardline"></div>
 
                 <h3>
-                  {t("phonenumber")}: +{card.phoneNumber}
+                  {t("phonenumber")}: +998 (99) 891-34-51
                 </h3>
 
                 <div className="rentcardline"></div>
