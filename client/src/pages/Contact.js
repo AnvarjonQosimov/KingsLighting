@@ -27,11 +27,11 @@ function Contact() {
           </span>{" "}
           +998 (99) 891-34-51
         </a>
-        <a href="https://t.me/@OLTIN_NISBAT_architecture">
+        <a href="https://t.me/@kingslighting">
           <span>
             <FaTelegram />
           </span>{" "}
-          OLTIN_NISBAT_architecture
+          KingsLighting
         </a>
       </div>
     </div>
