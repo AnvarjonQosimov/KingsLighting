@@ -1,6 +1,6 @@
 import * as React from "react";
 import "../styles/Header.css";
-import OltinNisbat from "../images/oltinnisbat.jpg";
+import kingsLighting from "../images/kingsLighting.webp";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import InputLabel from "@mui/material/InputLabel";
@@ -24,6 +24,7 @@ import personFace from "../images/personFace.jpg";
 import { collection, addDoc, getDocs, query, where } from "firebase/firestore";
 import { FaGoogle } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import KingsLighting from "../images/KingsLighting.jpg"
 
 Firebase();
 
@@ -115,10 +116,10 @@ function Header() {
     <div className="Header">
       <div className="logo">
         <Link to={""}>
-          <img src={OltinNisbat} alt="ArendaShop" />
+          <img src={KingsLighting} alt="KingsLighting" />
         </Link>
         <Link to={""}>
-          <h2>OltinNisbat</h2>
+          <h2>KingsLighting</h2>
         </Link>
       </div>
 

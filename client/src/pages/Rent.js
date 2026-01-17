@@ -237,7 +237,7 @@ function Rent(props) {
                 <div className="rentcardline"></div>
 
                 <h3 className="price">
-                  {t("price")}: {card.price} $<div className="priceline"></div>
+                  {t("price")}: +998 (99) 891-34-51 $<div className="priceline"></div>
                   <span>{t("oyiga")}</span>
                 </h3>
 
