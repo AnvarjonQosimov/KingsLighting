@@ -58,14 +58,11 @@ function Lease() {
       setIsLoading(true);
       const formData = new FormData();
 
-      const cleanPhone = phoneNumberInPanel.replace(/\D/g, "");
-
       const ownerId = auth.currentUser?.uid;
       formData.append("ownerId", ownerId);
       formData.append("initInformation", initalInformation);
       formData.append("additInformation", additionalInformation);
       formData.append("price", price);
-      formData.append("phoneNumber", cleanPhone);
       formData.append("id", uuid());
 
       for (let file of files) {

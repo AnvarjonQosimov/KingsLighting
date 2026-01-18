@@ -38,7 +38,7 @@ function Header() {
   const { t, i18n } = useTranslation();
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
-  const adminEmailMain = "kingslighting115@gmail.com";
+  const adminEmailMain = "kingslightingabdulaziz@gmail.com";
   const menuRef = useRef(null);
   const [showLoginPopup, setShowLoginPopup] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");

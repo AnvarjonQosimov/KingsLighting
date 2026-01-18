@@ -8,7 +8,7 @@ const Informations = new Schema({
     initInformation: {type: String, required: true},
     additInformation: {type: String, required: true},
     price: {type: Number, required: true},
-    phoneNumber: {type: String, required: true}
+    phoneNumber: {type: String, required: false}
 })
 
 
