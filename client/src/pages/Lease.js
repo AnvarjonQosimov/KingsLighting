@@ -14,6 +14,7 @@ import { v4 as uuid } from "uuid";
 import InputMask from "react-input-mask";
 import axios from "axios";
 import { auth } from "../Firebase/Firebase.js";
+import { onAuthStateChanged } from "firebase/auth";
 
 function Lease() {
   const [age, setAge] = React.useState("");
@@ -34,8 +35,8 @@ function Lease() {
   const [phoneError, setPhoneError] = useState("");
   const [mediaError, setMediaError] = useState("");
   const [initialError, setInitialError] = useState("");
-
   const mediaInputRef = React.useRef(null);
+  const [user, setUser] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -58,11 +59,14 @@ function Lease() {
       setIsLoading(true);
       const formData = new FormData();
 
+      const cleanPhone = phoneNumberInPanel.replace(/\D/g, "");
+
       const ownerId = auth.currentUser?.uid;
       formData.append("ownerId", ownerId);
       formData.append("initInformation", initalInformation);
       formData.append("additInformation", additionalInformation);
       formData.append("price", price);
+      formData.append("phoneNumber", cleanPhone);
       formData.append("id", uuid());
 
       for (let file of files) {
@@ -126,6 +130,16 @@ function Lease() {
     setInitialError("");
     setInitalInformation(value);
   };
+
+  const adminEmail = "oltinnisbatarch@gmail.com";
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   return (
     <div className="Lease">
@@ -248,7 +262,22 @@ function Lease() {
                   </label>
                 </div>
 
-                <button type="submit">{t("savebtn")}</button>
+                <div className="container phone-custom">
+                  <PhoneInput
+                    country={"uz"}
+                    value={phoneNumberInPanel}
+                    onChange={(phone) => setPhoneNumberInPanel(phone)}
+                    inputProps={{
+                      name: "phone",
+                      required: true,
+                      autofocus: true,
+                    }}
+                  />
+                </div>
+
+                {user?.email === adminEmail && (
+                  <button type="submit">{t("savebtn")}</button>
+                )}
               </form>
             </div>
           )}
