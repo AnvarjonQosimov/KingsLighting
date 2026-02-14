@@ -61,6 +61,9 @@ function Lease() {
 
       const cleanPhone = phoneNumberInPanel.replace(/\D/g, "");
 
+      const ownerEmail = auth.currentUser?.email;
+      formData.append("userEmail", ownerEmail);
+
       const ownerId = auth.currentUser?.uid;
       formData.append("ownerId", ownerId);
       formData.append("initInformation", initalInformation);
@@ -131,7 +134,7 @@ function Lease() {
     setInitalInformation(value);
   };
 
-  const adminEmail = "oltinnisbatarch@gmail.com";
+  const adminEmail = "kingslightingabdulaziz@gmail.com";
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -218,7 +221,7 @@ function Lease() {
                   <input
                     type="text"
                     value={initalInformation}
-                    maxle={25}
+                    maxLength={25}
                     className="input-field"
                     placeholder=" "
                     onChange={handleInitialChange}
@@ -270,7 +273,7 @@ function Lease() {
                     inputProps={{
                       name: "phone",
                       required: true,
-                      autofocus: true,
+                      autoFocus: true,
                     }}
                   />
                 </div>
