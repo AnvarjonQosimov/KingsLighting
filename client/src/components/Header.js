@@ -240,7 +240,8 @@ function Header() {
                 },
               }}
             >
-              <MenuItem onClick={handleClose}>{user.displayName}
+              <MenuItem onClick={handleClose}>{user.displayName}</MenuItem>
+              <MenuItem onClick={handleClose}>
                 <Link className="linkLi" to={"/aboutUser"}>
                   AboutUser
                 </Link>
@@ -250,9 +251,11 @@ function Header() {
 
               <MenuItem onClick={handleClose}>
                 {user.email === adminEmailMain && (
+                  <MenuItem onClick={handleClose}>
                     <Link className="linkLi" to={"/lease"}>
                       {t("admin")}
                     </Link>
+                  </MenuItem>
                 )}
               </MenuItem>
 
