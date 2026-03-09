@@ -229,13 +229,6 @@ function Rent(props) {
         </div>
       </div>
 
-      <div className="aiHelper">
-        <script
-          src="https://bot.jaicp.com/chatwidget/bxRYREsK:f1b087a0c5feb7efd5b06e27219aee2d06e82173/justwidget.js"
-          async
-        ></script>
-      </div>
-
       <div className="cardsAndLoading">
         {props.isLoading ? (
           <div className="rentLoading">
@@ -357,13 +350,12 @@ function Rent(props) {
                 <div className="rentcardline"></div>
 
                 <h3 className="price">
-                  {t("price")}: {card.price} $<div className="priceline"></div>
-                  <span>{t("oyiga")}</span>
+                  {t("price")}: {card.price} $
                 </h3>
 
                 <div className="rentcardline"></div>
 
-                <h4 className="phoneNum">{t("phonenumber")}: +998 (90) 996-51-02</h4>
+                <h4 className="phoneNum">{t("phonenumber")}: +998 (99) 891-34-51</h4>
 
                 <div className="rentcardline"></div>
 

@@ -123,11 +123,11 @@ h3 span {
   font-size: 17px;
 }
 
-.priceline {
+/* .priceline {
   width: 1px;
   height: 30px;
   background-color: grey;
-}
+} */
 
 .card h3:nth-of-type(2) {
   font-size: 17px;
@@ -228,7 +228,7 @@ h3 span {
 
 .editBtn,
 .deleteBtn {
-  padding: 6px 12px;
+  padding: 6px 12px !important;
   border-radius: 8px;
   border: none;
   cursor: pointer;
@@ -237,12 +237,12 @@ h3 span {
 }
 
 .editBtn {
-  background-color: #4caf50;
+  background-color: #4caf50 !important;
   color: white;
 }
 
 .deleteBtn {
-  background-color: #e53935;
+  background-color: #e53935 !important;
   color: white;
 }
 
@@ -455,7 +455,10 @@ h3 span {
 }
 
 .price {
-  font-size: 15px;
+  font-size: 15px !important;
+  display: flex;
+  justify-content: center !important;
+  width: 100%;
 }
 
 .fullModalContent2 {
@@ -1181,10 +1184,10 @@ h3 span {
 }
 
 .darkToggle {
-  position: fixed;
+  position: absolute !important;
   top: 100px;
   right: 25px;
-  z-index: 9999;
+  z-index: 1 !important;
 
   width: 45px;
   height: 45px;

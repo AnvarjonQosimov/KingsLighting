@@ -1,6 +1,6 @@
 import * as React from "react";
 import "../styles/Header.css";
-import kingsLighting from "../images/kingsLighting.webp";
+import KingsLighting from "../images/KingsLighting.jpg";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import InputLabel from "@mui/material/InputLabel";
@@ -24,7 +24,6 @@ import personFace from "../images/personFace.jpg";
 import { collection, addDoc, getDocs, query, where } from "firebase/firestore";
 import { FaGoogle } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import KingsLighting from "../images/KingsLighting.jpg"
 
 Firebase();
 
@@ -134,6 +133,13 @@ function Header() {
             {t("about")}
           </Link>
         </li>
+
+        {/* <li>
+          <Link className="li" to={"/aboutus"}>
+            {t("aboutus")}
+          </Link>
+        </li> */}
+
         <li>
           <Link className="li" to={"/rent"}>
             {t("rent")}
@@ -178,6 +184,14 @@ function Header() {
           >
             {t("about")}
           </NavLink>
+
+          {/* <NavLink
+            to="/aboutus"
+            onClick={() => setBurgerOpen(false)}
+            className="menu-link"
+          >
+            {t("aboutus")}
+          </NavLink> */}
 
           <NavLink
             to="/rent"
@@ -249,7 +263,6 @@ function Header() {
 
               {/* <Link className="linkLi" to={"/lease"}>{t("admin")}</Link> */}
 
-              <MenuItem onClick={handleClose}>
                 {user.email === adminEmailMain && (
                   <MenuItem onClick={handleClose}>
                     <Link className="linkLi" to={"/lease"}>
@@ -257,7 +270,15 @@ function Header() {
                     </Link>
                   </MenuItem>
                 )}
-              </MenuItem>
+              
+                {user.email === adminEmailMain && (
+                  <MenuItem onClick={handleClose}>
+                    <Link className="linkLi" to={"/adminpage"}>
+                      {t("adminpage")}
+                    </Link>
+                  </MenuItem>
+                )}
+              
 
               <MenuItem onClick={handleClose}>
                 <Link className="linkLi" to={"/features"}>

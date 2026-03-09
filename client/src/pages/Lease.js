@@ -249,7 +249,7 @@ function Lease() {
                   </label>
                 </div>
 
-                <div className="input-container">
+                {/* <div className="input-container">
                   <input
                     type="number"
                     value={price}
@@ -263,9 +263,9 @@ function Lease() {
                     {t("price")}
                     <span>{t("pricepl")}</span>
                   </label>
-                </div>
+                </div> */}
 
-                <div className="container phone-custom">
+                {/* <div className="container phone-custom">
                   <PhoneInput
                     country={"uz"}
                     value={phoneNumberInPanel}
@@ -276,7 +276,7 @@ function Lease() {
                       autoFocus: true,
                     }}
                   />
-                </div>
+                </div> */}
 
                 {user?.email === adminEmail && (
                   <button type="submit">{t("savebtn")}</button>
